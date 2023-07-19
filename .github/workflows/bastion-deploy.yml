@@ -5,9 +5,9 @@ on:
     branches: [ "main" ]
       
 env:
-  DOCKER_IMAGE: ghcr.io/${{ github.actor }}/redis-spring-server
+  DOCKER_IMAGE: ghcr.io/${{ github.actor }}/basics-of-building-aws-infrastructure-backend
   VERSION: ${{ github.sha }}
-  NAME: redis-spring-server
+  NAME: basics-of-building-aws-infrastructure-backend
       
 jobs:
   build:
@@ -79,7 +79,7 @@ jobs:
   deploy:
     needs: build
     name: Deploy
-    runs-on: [ self-hosted, deploy-redis-spring-backend ]
+    runs-on: [ self-hosted, depoloy-basics-of-building-aws-infrastructure-backend ]
     steps:
       - name: Deploy to prod
         uses: appleboy/ssh-action@v0.1.10
